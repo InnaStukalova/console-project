@@ -5,7 +5,7 @@ const personalMovieDB = {
     movies: {},
     actors: {},
     genres: [],
-    privat: false,
+    privat: true,
     start: function() {
         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
@@ -41,6 +41,13 @@ const personalMovieDB = {
     showMyDB: function (hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
+        }
+    },
+    toggleVisibleMyDB: function () {
+        if (personalMovieDB.privat) {
+            personalMovieDB.privat = false;
+        } else{
+            personalMovieDB.privat = true;
         }
     },
     writeYourGenres: function() {
